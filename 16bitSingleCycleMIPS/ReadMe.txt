@@ -1,5 +1,5 @@
 Single-cycle 16 bit CPU
-(instruction set will be expanded later, multy-cycle and pipelined version will come later(logisim + verilog))  
+(instruction set will be expanded later, multi-cycle and pipelined version will come later(logisim + verilog))  
 
 Program Counter(16 bit register):
 	Word-addressable
