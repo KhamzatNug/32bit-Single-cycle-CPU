@@ -1,4 +1,5 @@
 Single-cycle 16 bit CPU
+Logisim is required to open schematics
 (instruction set will be expanded later, multi-cycle and pipelined version will come later(logisim + verilog))  
 
 Program Counter(16 bit register):
