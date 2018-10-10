@@ -1,5 +1,7 @@
 Single-cycle 16 bit CPU
 (instruction set will be expanded later, multy-cycle and pipelined version will come later(logisim + verilog))  
+*To open .crc file Logisim is required.
+*To open .vcd file Gtkwave(or any other wave viewer)
 
 Program Counter(16 bit register):
 	Word-addressable(it is usefull to use one of these registers to hold "zero" temporary, but it is up to you.)
