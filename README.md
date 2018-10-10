@@ -1,1 +1,1 @@
-# 32bit-Single-cycle-CPU
+# 16bit-Single-cycle-CPU
