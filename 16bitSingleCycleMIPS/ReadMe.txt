@@ -4,9 +4,10 @@ Single-cycle 16 bit CPU
 *To open .vcd file Gtkwave(or any other wave viewer)
 
 Program Counter(16 bit register):
-	Word-addressable(it is usefull to use one of these registers to hold "zero" temporary, but it is up to you.)
+	It is usefull to use one of these registers to hold "zero" temporary, but it is up to you.
 
 Instruction Memory(16X32)
+	Word-Addressable 
 
 Data Memory(16X16)
 
