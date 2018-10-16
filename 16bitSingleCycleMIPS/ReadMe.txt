@@ -1,13 +1,10 @@
 Single-cycle 16 bit CPU
-(instruction set will be expanded later, multy-cycle and pipelined version will come later(logisim + verilog))  
-*To open .circ file Logisim is required.
-*To open .vcd file Gtkwave(or any other wave viewer)
+(instruction set will be expanded later[last update: andi,ori,sll,slr] , multy-cycle and pipelined version will come later(logisim + verilog))  
 
 Program Counter(16 bit register):
-	It is usefull to use one of these registers to hold "zero" temporary, but it is up to you.
+	Word-addressable(it is usefull to use one of these registers to hold "zero" temporary, but it is up to you.)
 
 Instruction Memory(16X32)
-	Word-Addressable 
 
 Data Memory(16X16)
 
@@ -17,7 +14,7 @@ Register File(16x32):
 Instruction encoding:
 	R-type
               32 bits = op(6)-rs(5)-rt(5)-rd(5)-shamt(5)-funct(6)
-	in our case rs[5]=rt[5]=rd[5]=0(we have only 16 registers, not 32), shamt=0(we do not have shift instructions yet)
+	in our case rs[5]=rt[5]=rd[5]=0(we have only 16 registers, not 32)
 	
 	I-type
 	      32 bits = op(6)-rs(5)-rt(5)-imm(16);
@@ -34,6 +31,8 @@ R-type (op=0)
 3)and rs,rt,rd ([rd]<=[rs]and[rt]), funct = 100100
 4)or rs,rt,rd  ([rd]<=[rs]or[rt]), funct = 100101
 5)slt rs,rt,rd ([rd]=1 if [rs]<[rt], 0 otherwise) funct = 101011
+6)sll rt,rd,shamp ([rd] <= [rs]<<shamp) funct = 000000
+7)slr rt,rd,shamp ([rd] <= [rs]>>shamp) funct = 000001
 
 I-type
 1)lw rs,rt,imm ([rt]<=datamem[[rs]+imm]), op = 100011
@@ -41,6 +40,8 @@ I-type
 3)beq rs,rt,imm (if [rs]==[rt] then branch to pc+imm address),
 	op = 001000
 4)addi rs,rt,imm ([rt]<=[rs]+imm), op = 010000
+5)andi rs,rt,imm ([rt]<=[rs]and(imm)), op = 101000
+6)ori rs,rt,imm ([rt]<=[rs]or(imm)), op = 001101
 
 J-type
 1)j target (jump to target address), op=000010
